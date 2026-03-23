@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minhao Liu | Personal Homepage</title>
+  <meta name="description" content="Minhao Liu's personal homepage: research, projects, publications, and contact." />
+  <style>
+    :root {
+      --bg: #f7f8fc;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --maxw: 980px;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(var(--maxw), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(247, 248, 252, 0.88);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+    }
+
+    .logo {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      padding: 56px 0 28px;
+    }
+
+    .hero-card {
+      background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .hero-panel {
+      background: #0f172a;
+      color: #e5e7eb;
+      border-radius: 20px;
+      padding: 22px;
+      min-height: 240px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-panel h3 {
+      margin: 0 0 10px;
+      color: #fff;
+      font-size: 1.05rem;
+    }
+
+    .hero-panel p {
+      margin: 0;
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+
+    section {
+      padding: 18px 0 8px;
+    }
+
+    .section-title {
+      margin: 0 0 16px;
+      font-size: 1.4rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 24px;
+      margin-bottom: 18px;
+    }
+
+    .about-grid,
+    .project-grid,
+    .pub-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .about-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+
+    .project-grid,
+    .pub-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .item-title {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 10px;
+    }
+
+    ul.clean {
+      margin: 10px 0 0 18px;
+      padding: 0;
+    }
+
+    .tag-list {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .tag {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #f3f4f6;
+      border: 1px solid var(--line);
+      font-size: 0.85rem;
+      color: #374151;
+    }
+
+    footer {
+      padding: 24px 0 50px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    .contact-line {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 860px) {
+      .hero-card,
+      .about-grid,
+      .project-grid,
+      .pub-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero { padding-top: 30px; }
+      .hero-card { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">Minhao Liu</div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <div>
+          <div class="badge">Automation · AI · Robotics · Computer Vision</div>
+          <h1>刘玟昊 / Minhao Liu</h1>
+          <p class="subtitle">
+            Undergraduate student at Shanghai Jiao Tong University, interested in autonomous driving,
+            embodied intelligence, large models, reinforcement learning, and multimodal perception.
+          </p>
+          <p>
+            I focus on building practical AI systems and conducting research at the intersection of
+            perception, decision-making, and intelligent agents.
+          </p>
+          <div class="cta">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn" href="./CV.pdf" target="_blank" rel="noopener">Download CV</a>
+            <a class="btn" href="https://github.com/yourname" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <h3>Current Interests</h3>
+          <p>
+            BEV perception, radar-camera fusion, inverse rendering for autonomous driving,
+            foundation models, LLM agents, reinforcement learning, and robotic intelligence.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">About</h2>
+      <div class="about-grid">
+        <div class="card">
+          <p>
+            I am currently pursuing my undergraduate studies in Automation. My recent work has focused on
+            autonomous driving perception, multimodal fusion, and AI systems. I am also interested in how
+            foundation models and intelligent agents can be combined with physical-world reasoning and robotics.
+          </p>
+          <p>
+            I am actively exploring research opportunities related to embodied intelligence, computer vision,
+            machine learning systems, and trustworthy AI.
+          </p>
+        </div>
+        <div class="card">
+          <div class="item-title">Keywords</div>
+          <div class="tag-list">
+            <span class="tag">Autonomous Driving</span>
+            <span class="tag">BEV Fusion</span>
+            <span class="tag">Computer Vision</span>
+            <span class="tag">Embodied AI</span>
+            <span class="tag">LLM Agents</span>
+            <span class="tag">Reinforcement Learning</span>
+            <span class="tag">Robotics</span>
+            <span class="tag">Graph ML</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <h2 class="section-title">Research Experience</h2>
+      <div class="card">
+        <div class="item-title">Radar + Camera BEV Fusion (DifFUSER-based)</div>
+        <div class="meta">Jul 2025 – Oct 2025</div>
+        <ul class="clean">
+          <li>Built a BEV fusion pipeline using millimeter-wave radar point clouds and cameras as a low-cost alternative to LiDAR.</li>
+          <li>Integrated a weather classifier with WRGNet to adapt fusion weights across weather conditions for improved robustness.</li>
+          <li>Achieved 0.52 mIoU on the target setting, demonstrating competitive performance for a low-cost radar-camera alternative to LiDAR.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="item-title">Inverse Rendering for Autonomous Driving</div>
+        <div class="meta">Ongoing</div>
+        <ul class="clean">
+          <li>Exploring inverse rendering pipelines for autonomous-driving scenes with a focus on lighting, materials, and geometry-aware scene understanding.</li>
+          <li>Investigating how multi-view reconstruction and scene representations can improve downstream perception and world modeling.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Selected Projects</h2>
+      <div class="project-grid">
+        <div class="card">
+          <div class="item-title">Dream Journal AI Platform</div>
+          <div class="meta">Yuanqi Vision Campus Vibe Coding Competition · Bronze Prize</div>
+          <p>
+            Built an AI-powered web application for dream journaling and analysis, with user authentication,
+            timeline management, thematic analysis, and dream visualization.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="item-title">Flash-Triggered Camera System</div>
+          <div class="meta">Embedded Systems Project</div>
+          <p>
+            Developed an STM32-based camera system triggered by a light sensor, with image capture and storage to SD card.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="item-title">Terminal-Bench / Agent Evaluation</div>
+          <div class="meta">LLM Evaluation & Benchmarking</div>
+          <p>
+            Explored software-engineering and terminal-agent benchmarks, with interest in model capability, reliability, and systems-level evaluation.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="item-title">Robotics Simulation Migration</div>
+          <div class="meta">IsaacLab → MuJoCo</div>
+          <p>
+            Investigated migration of robot tasks and models between simulation frameworks, focusing on reproducibility and control consistency.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2 class="section-title">Publications / Preprints</h2>
+      <div class="pub-grid">
+        <div class="card">
+          <div class="item-title">Paper / Preprint Title 1</div>
+          <div class="meta">Conference / Journal · Year</div>
+          <p>Brief description of your contribution. Replace with your actual publication information.</p>
+        </div>
+        <div class="card">
+          <div class="item-title">Paper / Preprint Title 2</div>
+          <div class="meta">Conference / Journal · Year</div>
+          <p>Brief description of your contribution. Replace with your actual publication information.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="card">
+        <p>
+          I am open to research collaborations, internship opportunities, and academic discussions related to AI,
+          robotics, autonomous driving, and intelligent systems.
+        </p>
+        <div class="contact-line">
+          <span>Email: <a href="mailto:your_email@example.com">your_email@example.com</a></span>
+          <span>GitHub: <a href="https://github.com/yourname" target="_blank" rel="noopener">github.com/yourname</a></span>
+          <span>Google Scholar: <a href="#">Coming soon</a></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Minhao Liu. Built with plain HTML and CSS.</div>
+  </footer>
+</body>
+</html>
