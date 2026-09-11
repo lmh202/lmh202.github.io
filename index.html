@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Minhao Liu | Research</title>
-  <meta name="description" content="Minhao Liu — undergraduate researcher in AI for Science, LLM agents, and computer vision." />
+  <title>Minhao Liu | Machine Learning & AI for Science</title>
+  <meta name="description" content="Minhao Liu — undergraduate researcher working on machine learning, AI for Science, LLM agents, and multimodal learning." />
   <style>
     :root {
       --bg:#f7f8fb; --card:#ffffff; --text:#172033; --muted:#64748b;
@@ -36,14 +36,14 @@
   <section class="hero">
     <div class="hero-box">
       <div class="hero-main">
-        <div class="eyebrow">AI for Science · LLM Agents · Computer Vision</div>
+        <div class="eyebrow">Machine Learning · AI for Science · LLM Agents</div>
         <h1>Minhao Liu</h1>
         <p class="subtitle">B.Eng. candidate in Automation (IEEE Honor Class), Shanghai Jiao Tong University · Non-Graduating Exchange at NUS School of Computing</p>
-        <p>I am interested in reliable AI systems that combine learning, reasoning, and structured evidence. My current work spans AI for Science and computer vision.</p>
+        <p>I am interested in machine learning methods for reliable reasoning and decision making, especially when models must combine learned representations with structured or imperfect evidence. My recent work spans AI for Science, LLM/agent evaluation, multimodal learning, Transformers, and diffusion-based models.</p>
         <div class="actions">
           <a class="btn primary" href="mailto:lmhjaccount@sjtu.edu.cn">Email</a>
           <a class="btn" href="https://github.com/lmh202" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="#projects">Selected Projects</a>
+          <a class="btn" href="#research">Research</a>
         </div>
       </div>
       <div class="hero-side">
@@ -57,8 +57,16 @@
   <section id="about">
     <h2 class="section-title">About</h2>
     <div class="card">
-      <p>My research background includes computer vision, autonomous-driving perception and scene reconstruction, and LLM/agent evaluation. I am currently exploring AI for Science and agent-based scientific reasoning during my NUS exchange.</p>
-      <div class="tags"><span class="tag">AI for Science</span><span class="tag">LLM Agents</span><span class="tag">Computer Vision</span><span class="tag">Inverse Rendering</span><span class="tag">Autonomous Driving</span><span class="tag">Machine Learning Systems</span></div>
+      <p>My background is in machine learning applied across several domains rather than a single application area. I have worked on Transformer-based multimodal architectures, diffusion-based fusion, representation learning with physical priors, LLM/agent evaluation, and learning-based scene modeling. I am now particularly interested in machine learning and AI for Science.</p>
+      <div class="tags">
+        <span class="tag">Machine Learning</span>
+        <span class="tag">AI for Science</span>
+        <span class="tag">LLM Agents</span>
+        <span class="tag">Transformers</span>
+        <span class="tag">Diffusion Models</span>
+        <span class="tag">Multimodal Learning</span>
+        <span class="tag">PyTorch</span>
+      </div>
     </div>
   </section>
 
@@ -68,21 +76,24 @@
       <div class="card">
         <div class="title">AI for Science — NUS School of Computing</div>
         <div class="meta">Prof. Yao Lu · Aug 2026 – Present</div>
-        <p>Working on AI for Science research with an emphasis on rigorous, reproducible evaluation and evidence-grounded analysis.</p>
+        <p>Working on AI for Science research with an emphasis on LLM-based scientific reasoning, reproducible evaluation, controlled baselines, and evidence-grounded analysis.</p>
       </div>
+
       <div class="card">
-        <div class="title">Computer Vision Research</div>
+        <div class="title">Learning with Imperfect Physical Priors</div>
         <div class="meta">First-author manuscript under review</div>
-        <p>Research on robust visual understanding using physically motivated priors and controlled experimental evaluation.</p>
-        <div class="notice">Technical details, code, and unpublished results are intentionally withheld while the manuscript is under peer review.</div>
+        <p>Developed and evaluated Transformer-based multimodal architectures that combine learned visual representations with imperfect intrinsic physical priors, including gated cross-source interaction and component-level verification.</p>
+        <div class="notice">Code, full architecture details, and unpublished experimental results are intentionally withheld while the manuscript is under peer review.</div>
       </div>
+
       <div class="card">
-        <div class="title">Autonomous Driving & Scene Reconstruction</div>
-        <p>Worked on radar-camera BEV fusion and inverse-rendering pipelines for dynamic driving scenes.</p>
+        <div class="title">Multimodal Learning & Scene Modeling</div>
+        <p>Worked on diffusion-based radar-camera fusion and learning-based 3D scene modeling, including inverse-rendering pipelines with RGB and LiDAR-derived signals for dynamic environments.</p>
       </div>
+
       <div class="card">
         <div class="title">LLM / Agent Evaluation</div>
-        <p>Experience with executable-task evaluation, dataset curation, and experimental analysis for coding, tool-use, and reasoning systems.</p>
+        <p>Worked on executable-task evaluation, dataset curation, and experimental analysis across coding, tool-use, and reasoning settings, contributing to evaluation workflows for a research manuscript.</p>
       </div>
     </div>
   </section>
@@ -93,24 +104,27 @@
       <div class="card">
         <div class="title">AURORA</div>
         <div class="meta">AI-powered financial decision-support system · Group capstone</div>
-        <p>Combines market/news analysis, portfolio risk assessment, and recommendation components in a FastAPI + web frontend stack.</p>
+        <p>Combines market/news analysis, risk modeling, and portfolio recommendations in a modular FastAPI + web frontend stack.</p>
         <a href="https://github.com/lmh202/finance_prj" target="_blank" rel="noopener">Repository →</a>
       </div>
+
       <div class="card">
-        <div class="title">Industrial Internet / Manufacturing Agent Simulation</div>
-        <div class="meta">Robotics + agent workflow</div>
-        <p>CoppeliaSim-based manufacturing simulation with natural-language task parsing, deterministic production control, numerical IK, and multi-line scheduling.</p>
+        <div class="title">Manufacturing Agent Simulation</div>
+        <div class="meta">LLM task parsing + robotics control</div>
+        <p>CoppeliaSim-based manufacturing workflow with natural-language task parsing, deterministic execution, numerical inverse kinematics, and multi-line scheduling.</p>
         <a href="https://github.com/lmh202/Industrial_Internet" target="_blank" rel="noopener">Repository →</a>
       </div>
+
       <div class="card">
         <div class="title">AGV Networked Control Simulation</div>
-        <div class="meta">Control systems project</div>
+        <div class="meta">Learning/control systems project</div>
         <p>Simulation and stress testing of collaborative AGV control under packet loss, delay, and time-varying network conditions.</p>
         <a href="https://github.com/lmh202/AGV_control" target="_blank" rel="noopener">Repository →</a>
       </div>
+
       <div class="card">
         <div class="title">AI3603 Billiards Agent</div>
-        <div class="meta">Course project</div>
+        <div class="meta">Reinforcement-learning course project</div>
         <p>Agent implementation and evaluation in a simulated billiards environment.</p>
         <a href="https://github.com/lmh202/billiards" target="_blank" rel="noopener">Repository →</a>
       </div>
