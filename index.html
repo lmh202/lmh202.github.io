@@ -4,138 +4,102 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Minhao Liu | Machine Learning & AI for Science</title>
-  <meta name="description" content="Minhao Liu — undergraduate researcher working on machine learning, AI for Science, LLM agents, and multimodal learning." />
+  <meta name="description" content="Minhao Liu — undergraduate researcher in machine learning, AI for Science, LLM agents, multimodal learning, and diffusion models." />
   <style>
-    :root {
-      --bg:#f7f8fb; --card:#ffffff; --text:#172033; --muted:#64748b;
-      --line:#e5e7eb; --accent:#1d4ed8; --soft:#eff6ff; --maxw:960px;
+    :root{
+      --bg:#f6f8fb;--panel:#ffffff;--text:#172033;--muted:#64748b;
+      --line:#dfe5ec;--accent:#2457c5;--accent2:#0f2f63;--soft:#eef4ff;
+      --maxw:1020px;
     }
-    *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
-    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.62}
+    a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
     .wrap{width:min(var(--maxw),calc(100% - 36px));margin:0 auto}
-    header{background:rgba(247,248,251,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
-    nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0;gap:16px}
-    .brand{font-weight:750}.links{display:flex;gap:18px;flex-wrap:wrap;font-size:.93rem}
-    .hero{padding:68px 0 34px}.hero-box{display:grid;grid-template-columns:1.45fr .75fr;gap:28px;align-items:stretch}
-    .hero-main,.hero-side,.card{background:var(--card);border:1px solid var(--line);border-radius:18px}
-    .hero-main{padding:34px}.hero-side{padding:26px;background:#111827;color:#e5e7eb;display:flex;flex-direction:column;justify-content:center}
-    .eyebrow{display:inline-block;padding:5px 10px;border-radius:999px;background:var(--soft);color:var(--accent);font-size:.82rem;font-weight:700;margin-bottom:14px}
-    h1{font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.05;margin:0 0 12px}.subtitle{color:var(--muted);font-size:1.05rem;margin:0 0 18px}
-    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.btn{padding:9px 14px;border:1px solid var(--line);border-radius:10px;background:white;color:var(--text);font-weight:650}.btn.primary{background:var(--accent);border-color:var(--accent);color:white}
-    section{padding:18px 0}.section-title{font-size:1.35rem;margin:0 0 14px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{padding:22px}.title{font-weight:750;margin-bottom:4px}.meta{color:var(--muted);font-size:.92rem;margin-bottom:8px}
-    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.tag{padding:5px 9px;border:1px solid var(--line);border-radius:999px;background:#f8fafc;font-size:.84rem;color:#475569}
-    .notice{border-left:3px solid var(--accent);padding:10px 14px;background:var(--soft);border-radius:8px;color:#334155;margin-top:14px}
-    footer{padding:32px 0 48px;color:var(--muted);font-size:.9rem}
-    @media(max-width:760px){.hero-box,.grid{grid-template-columns:1fr}.hero{padding-top:38px}.links{display:none}}
+    header{position:sticky;top:0;z-index:20;background:rgba(246,248,251,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    nav{height:62px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-weight:800;letter-spacing:.01em}.navlinks{display:flex;gap:20px;font-size:.92rem;color:var(--muted)}
+    .hero{padding:64px 0 34px}.hero-grid{display:grid;grid-template-columns:1.45fr .7fr;gap:18px}.hero-main,.hero-side,.card{background:var(--panel);border:1px solid var(--line);border-radius:18px}
+    .hero-main{padding:40px}.hero-side{padding:28px;background:linear-gradient(145deg,#173d7a,#0f274d);color:#e8eef8}
+    .kicker{font-size:.84rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+    h1{font-size:clamp(2.5rem,5vw,4rem);line-height:1.02;margin:0 0 14px}.sub{font-size:1.06rem;color:var(--muted);margin:0 0 18px;max-width:760px}
+    .lead{font-size:1.02rem;margin:0;max-width:760px}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.chip{padding:6px 10px;border-radius:999px;background:var(--soft);border:1px solid #dbe7ff;color:#244a8f;font-size:.84rem;font-weight:650}
+    .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.btn{padding:9px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--text);font-weight:700}.btn.primary{background:var(--accent);border-color:var(--accent);color:white}
+    .hero-side .label{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:#a9bedf;margin-bottom:12px}.hero-side h3{font-size:1.2rem;margin:0 0 10px;color:white}.hero-side p{margin:0 0 16px;color:#d3deef}.hero-side .small{font-size:.9rem;color:#afc0db}
+    section{padding:22px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:14px}.section-head h2{margin:0;font-size:1.45rem}.section-head p{margin:0;color:var(--muted);font-size:.93rem}
+    .focus-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{padding:22px}.card h3{font-size:1.02rem;margin:0 0 6px}.meta{color:var(--muted);font-size:.9rem;margin-bottom:10px}.card p{margin:0;color:#334155}.method{font-weight:750;color:var(--accent2)}
+    .timeline{display:grid;gap:14px}.research-row{display:grid;grid-template-columns:180px 1fr;gap:18px;padding:20px 22px;background:var(--panel);border:1px solid var(--line);border-radius:16px}.research-row .when{font-size:.9rem;color:var(--muted)}.research-row h3{margin:0 0 6px;font-size:1.03rem}.research-row p{margin:0 0 6px;color:#334155}.research-row p:last-child{margin-bottom:0}
+    .project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.project-grid .card{display:flex;flex-direction:column}.repo{margin-top:auto;padding-top:14px;font-weight:700}
+    .note{margin-top:10px;padding:9px 12px;background:#f8fafc;border-left:3px solid #94a3b8;border-radius:8px;color:#566274;font-size:.88rem}
+    footer{padding:34px 0 48px;color:var(--muted);font-size:.9rem}
+    @media(max-width:820px){.hero-grid,.focus-grid,.project-grid{grid-template-columns:1fr}.research-row{grid-template-columns:1fr}.navlinks{display:none}.hero{padding-top:34px}.hero-main{padding:28px}}
   </style>
 </head>
 <body>
-<header><div class="wrap"><nav><div class="brand">Minhao Liu</div><div class="links"><a href="#about">About</a><a href="#research">Research</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div></nav></div></header>
+<header><div class="wrap"><nav><div class="brand">Minhao Liu</div><div class="navlinks"><a href="#focus">Research Focus</a><a href="#research">Experience</a><a href="#projects">Public Projects</a><a href="#contact">Contact</a></div></nav></div></header>
+
 <main class="wrap">
   <section class="hero">
-    <div class="hero-box">
+    <div class="hero-grid">
       <div class="hero-main">
-        <div class="eyebrow">Machine Learning · AI for Science · LLM Agents</div>
+        <div class="kicker">Machine Learning · AI for Science · LLM Agents</div>
         <h1>Minhao Liu</h1>
-        <p class="subtitle">B.Eng. candidate in Automation (IEEE Honor Class), Shanghai Jiao Tong University · Non-Graduating Exchange at NUS School of Computing</p>
-        <p>I am interested in machine learning methods for reliable reasoning and decision making, especially when models must combine learned representations with structured or imperfect evidence. My recent work spans AI for Science, LLM/agent evaluation, multimodal learning, Transformers, and diffusion-based models.</p>
-        <div class="actions">
-          <a class="btn primary" href="mailto:lmhjaccount@sjtu.edu.cn">Email</a>
-          <a class="btn" href="https://github.com/lmh202" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="#research">Research</a>
-        </div>
+        <p class="sub">B.Eng. candidate in Automation (IEEE Honor Class), Shanghai Jiao Tong University · Non-Graduating Exchange at NUS School of Computing</p>
+        <p class="lead">I work on machine learning systems that must reason with heterogeneous, imperfect, or structured evidence. My recent research uses <strong>Transformers, diffusion models, multimodal learning, and LLM-based evaluation</strong> across scientific reasoning and perception problems.</p>
+        <div class="chips"><span class="chip">Machine Learning</span><span class="chip">AI for Science</span><span class="chip">Transformers</span><span class="chip">Diffusion Models</span><span class="chip">Multimodal Learning</span><span class="chip">LLM Agents</span><span class="chip">PyTorch</span></div>
+        <div class="links"><a class="btn primary" href="mailto:lmhjaccount@sjtu.edu.cn">Email</a><a class="btn" href="https://github.com/lmh202" target="_blank" rel="noopener">GitHub</a><a class="btn" href="#research">Research Experience</a></div>
       </div>
-      <div class="hero-side">
-        <div class="title">Current</div>
-        <p>AI for Science research at NUS School of Computing under Prof. Yao Lu.</p>
-        <p style="margin-bottom:0">SJTU Automation · Expected graduation: Jun 2027</p>
-      </div>
+      <aside class="hero-side">
+        <div class="label">Current</div>
+        <h3>AI for Science @ NUS</h3>
+        <p>Research under Prof. Yao Lu, with emphasis on LLM-based scientific reasoning, reproducible evaluation, and evidence-grounded analysis.</p>
+        <div class="small">SJTU Automation · Rank 3/33 · Expected Jun 2027</div>
+      </aside>
     </div>
   </section>
 
-  <section id="about">
-    <h2 class="section-title">About</h2>
-    <div class="card">
-      <p>My background is in machine learning applied across several domains rather than a single application area. I have worked on Transformer-based multimodal architectures, diffusion-based fusion, representation learning with physical priors, LLM/agent evaluation, and learning-based scene modeling. I am now particularly interested in machine learning and AI for Science.</p>
-      <div class="tags">
-        <span class="tag">Machine Learning</span>
-        <span class="tag">AI for Science</span>
-        <span class="tag">LLM Agents</span>
-        <span class="tag">Transformers</span>
-        <span class="tag">Diffusion Models</span>
-        <span class="tag">Multimodal Learning</span>
-        <span class="tag">PyTorch</span>
-      </div>
+  <section id="focus">
+    <div class="section-head"><h2>Research Focus</h2><p>Methods first; applications second.</p></div>
+    <div class="focus-grid">
+      <div class="card"><h3>Learning with Imperfect Priors</h3><p>How learned representations can use physical or structured priors without blindly trusting them. Recent work explores <span class="method">gated cross-source attention</span>, component-level verification, and controlled ablations.</p></div>
+      <div class="card"><h3>Generative & Multimodal Learning</h3><p>Experience with <span class="method">diffusion-based fusion</span>, multimodal representations, and learning from heterogeneous sensor signals in dynamic environments.</p></div>
+      <div class="card"><h3>AI for Science & Agents</h3><p>Interested in reliable scientific reasoning, executable evaluation, and research workflows where LLMs or agents must produce results that remain traceable and reproducible.</p></div>
     </div>
   </section>
 
   <section id="research">
-    <h2 class="section-title">Research</h2>
-    <div class="grid">
-      <div class="card">
-        <div class="title">AI for Science — NUS School of Computing</div>
-        <div class="meta">Prof. Yao Lu · Aug 2026 – Present</div>
-        <p>Working on AI for Science research with an emphasis on LLM-based scientific reasoning, reproducible evaluation, controlled baselines, and evidence-grounded analysis.</p>
+    <div class="section-head"><h2>Research Experience</h2><p>Selected work</p></div>
+    <div class="timeline">
+      <div class="research-row">
+        <div class="when">Aug 2026 – Present</div>
+        <div><h3>AI for Science Research — NUS School of Computing</h3><div class="meta">Prof. Yao Lu</div><p>Working on LLM-based scientific reasoning and reproducible evaluation, including controlled baselines, ablations, and evidence-grounded analysis.</p></div>
       </div>
-
-      <div class="card">
-        <div class="title">Learning with Imperfect Physical Priors</div>
-        <div class="meta">First-author manuscript under review</div>
-        <p>Developed and evaluated Transformer-based multimodal architectures that combine learned visual representations with imperfect intrinsic physical priors, including gated cross-source interaction and component-level verification.</p>
-        <div class="notice">Code, full architecture details, and unpublished experimental results are intentionally withheld while the manuscript is under peer review.</div>
+      <div class="research-row">
+        <div class="when">First-author manuscript under review</div>
+        <div><h3>Machine Learning with Intrinsic Physical Priors</h3><p>Designed a dual-stream architecture that combines learned RGB representations with imperfect intrinsic priors through route-gated cross-prior attention and component-level verification.</p><p>Led model design, training, evaluation, and ablation studies.</p><div class="note">Full code, architecture details, and unpublished results are withheld during peer review.</div></div>
       </div>
-
-      <div class="card">
-        <div class="title">Multimodal Learning & Scene Modeling</div>
-        <p>Worked on diffusion-based radar-camera fusion and learning-based 3D scene modeling, including inverse-rendering pipelines with RGB and LiDAR-derived signals for dynamic environments.</p>
+      <div class="research-row">
+        <div class="when">Earlier research</div>
+        <div><h3>Multimodal Learning & Scene Modeling</h3><p>Built a diffusion-based radar-camera fusion pipeline with adaptive fusion under changing conditions.</p><p>Adapted a 3D Gaussian Splatting inverse-rendering framework to combine RGB observations with LiDAR-intensity constraints for dynamic scenes.</p></div>
       </div>
-
-      <div class="card">
-        <div class="title">LLM / Agent Evaluation</div>
-        <p>Worked on executable-task evaluation, dataset curation, and experimental analysis across coding, tool-use, and reasoning settings, contributing to evaluation workflows for a research manuscript.</p>
+      <div class="research-row">
+        <div class="when">Research internship</div>
+        <div><h3>LLM / Agent Evaluation — Shanghai Innovation Institute</h3><p>Worked on dataset curation, executable-task evaluation, and experimental analysis across coding, tool-use, and reasoning tasks; contributed to evaluation workflows for a research manuscript.</p></div>
       </div>
     </div>
   </section>
 
   <section id="projects">
-    <h2 class="section-title">Selected Public Projects</h2>
-    <div class="grid">
-      <div class="card">
-        <div class="title">AURORA</div>
-        <div class="meta">AI-powered financial decision-support system · Group capstone</div>
-        <p>Combines market/news analysis, risk modeling, and portfolio recommendations in a modular FastAPI + web frontend stack.</p>
-        <a href="https://github.com/lmh202/finance_prj" target="_blank" rel="noopener">Repository →</a>
-      </div>
-
-      <div class="card">
-        <div class="title">Manufacturing Agent Simulation</div>
-        <div class="meta">LLM task parsing + robotics control</div>
-        <p>CoppeliaSim-based manufacturing workflow with natural-language task parsing, deterministic execution, numerical inverse kinematics, and multi-line scheduling.</p>
-        <a href="https://github.com/lmh202/Industrial_Internet" target="_blank" rel="noopener">Repository →</a>
-      </div>
-
-      <div class="card">
-        <div class="title">AGV Networked Control Simulation</div>
-        <div class="meta">Learning/control systems project</div>
-        <p>Simulation and stress testing of collaborative AGV control under packet loss, delay, and time-varying network conditions.</p>
-        <a href="https://github.com/lmh202/AGV_control" target="_blank" rel="noopener">Repository →</a>
-      </div>
-
-      <div class="card">
-        <div class="title">AI3603 Billiards Agent</div>
-        <div class="meta">Reinforcement-learning course project</div>
-        <p>Agent implementation and evaluation in a simulated billiards environment.</p>
-        <a href="https://github.com/lmh202/billiards" target="_blank" rel="noopener">Repository →</a>
-      </div>
+    <div class="section-head"><h2>Selected Public Projects</h2><p>Public code only; unpublished research is intentionally excluded.</p></div>
+    <div class="project-grid">
+      <div class="card"><h3>AURORA</h3><div class="meta">AI-powered financial decision-support system · Group capstone</div><p>Market/news analysis, portfolio risk modeling, and recommendation modules in a FastAPI + web frontend stack.</p><a class="repo" href="https://github.com/lmh202/finance_prj" target="_blank" rel="noopener">View repository →</a></div>
+      <div class="card"><h3>Manufacturing Agent Simulation</h3><div class="meta">LLM task parsing + robotics control</div><p>Natural-language task parsing, deterministic execution, numerical IK, and multi-line scheduling in a CoppeliaSim manufacturing workflow.</p><a class="repo" href="https://github.com/lmh202/Industrial_Internet" target="_blank" rel="noopener">View repository →</a></div>
+      <div class="card"><h3>Diffusion-based Multimodal Fusion</h3><div class="meta">Public project shell</div><p>Public-facing repository associated with earlier multimodal learning work. Detailed experimental assets are not included.</p><a class="repo" href="https://github.com/lmh202/DifFUSER" target="_blank" rel="noopener">View repository →</a></div>
+      <div class="card"><h3>AI3603 Billiards Agent</h3><div class="meta">Reinforcement-learning course project</div><p>Agent implementation and evaluation in a simulated billiards environment.</p><a class="repo" href="https://github.com/lmh202/billiards" target="_blank" rel="noopener">View repository →</a></div>
     </div>
   </section>
 
   <section id="contact">
-    <h2 class="section-title">Contact</h2>
-    <div class="card">
-      <p style="margin:0">Email: <a href="mailto:lmhjaccount@sjtu.edu.cn">lmhjaccount@sjtu.edu.cn</a> &nbsp;·&nbsp; NUS: <a href="mailto:liuminhao@u.nus.edu">liuminhao@u.nus.edu</a> &nbsp;·&nbsp; GitHub: <a href="https://github.com/lmh202" target="_blank" rel="noopener">github.com/lmh202</a></p>
-    </div>
+    <div class="section-head"><h2>Contact</h2></div>
+    <div class="card"><p>Email: <a href="mailto:lmhjaccount@sjtu.edu.cn">lmhjaccount@sjtu.edu.cn</a> &nbsp;·&nbsp; NUS: <a href="mailto:liuminhao@u.nus.edu">liuminhao@u.nus.edu</a> &nbsp;·&nbsp; GitHub: <a href="https://github.com/lmh202" target="_blank" rel="noopener">github.com/lmh202</a></p></div>
   </section>
 </main>
 <footer><div class="wrap">© 2026 Minhao Liu</div></footer>
